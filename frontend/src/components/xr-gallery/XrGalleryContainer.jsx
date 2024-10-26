@@ -101,7 +101,7 @@ const XrGalleryContainer = () => {
 
   const handleARButtonClick = () => {
     // Navigate to the desired route
-    navigate("/xr-cube"); // Replace with your desired route
+    navigate("/web-xr"); // Replace with your desired route
   };
 
   const interfaceRef = useCallback((node) => {
