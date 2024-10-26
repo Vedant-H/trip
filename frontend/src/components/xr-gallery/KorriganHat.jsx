@@ -47,7 +47,7 @@ import { useCharacterAnimations } from "./../../contexts/CharacterAnimations";
 
 const Model = () => {
   const { currentModelName } = useCharacterAnimations();
-  const gltf = useLoader(GLTFLoader, `/models/mikoshiportable_shrine.glb`);
+  const gltf = useLoader(GLTFLoader, `/models/skyscraper_hotel_apartments_marina.glb`);
 
   return (
     <Suspense fallback={null}>
