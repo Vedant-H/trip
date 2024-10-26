@@ -39,15 +39,23 @@
 // useGLTF.preload("/models/korrigan-hat.gltf");
 
 
-import { useLoader } from "@react-three/fiber";
-import { Suspense } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const Model = ({ position }) => {
-  const gltf = useLoader(GLTFLoader, "/models/mikoshiportable_shrine.glb`");
+import { useEffect, Suspense } from "react";
+import { useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { useCharacterAnimations } from "./../../contexts/CharacterAnimations";
+
+const Model = () => {
+  const { currentModelName } = useCharacterAnimations();
+  const gltf = useLoader(GLTFLoader, `/models/mikoshiportable_shrine.glb`);
+
   return (
     <Suspense fallback={null}>
-      <primitive position={position} object={gltf.scene} />
+      <primitive
+        object={gltf.scene}
+        scale={1} // Adjust scale as necessary
+        position={[0, 0, 0]} // Adjust position if needed
+      />
     </Suspense>
   );
 };
