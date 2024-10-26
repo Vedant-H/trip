@@ -45,7 +45,7 @@ import { Suspense } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Model = ({ position }) => {
-  const gltf = useLoader(GLTFLoader, "models/free__burj_khalifa_dubai.glb");
+  const gltf = useLoader(GLTFLoader, "models/mikoshiportable_shrine.glb");
   return (
     <Suspense fallback={null}>
       <primitive position={position} object={gltf.scene} />
